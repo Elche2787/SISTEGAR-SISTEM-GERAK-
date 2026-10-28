@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Interaktif Sistem Rangka – Biologi XI</title>
+<meta name="description" content="Media pembelajaran interaktif Sistem Gerak: Rangka Manusia untuk SMA Kelas XI">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 1. LANDING / LOGIN -->
+<main id="landing" class="landing">
+  <div class="landing-card">
+    <div class="char"><img src="assets/siswa.gif" alt="Karakter siswa melambai"></div>
+    <form id="loginForm" class="login" autocomplete="off">
+      <p class="eyebrow">Biologi • Sistem Gerak • Kelas XI</p>
+      <h1>Jelajah <span>Rangka</span> Manusia</h1>
+      <p class="sub">Belajar, rontgen 3D, lalu uji pemahamanmu!</p>
+      <label for="nama">Nama Siswa</label>
+      <input id="nama" type="text" maxlength="40" placeholder="Tulis namamu…" required>
+      <label for="kelas">Kelas</label>
+      <select id="kelas">
+        <option>XI 1</option><option selected>XI 2</option><option>XI 3</option>
+        <option>XI 4</option><option>XI 5</option><option>XI 6</option>
+      </select>
+      <button class="btn" type="submit">Login ▶</button>
+      <p id="err" class="err" hidden>Isi namamu dulu ya 🙂</p>
+    </form>
+  </div>
+</main>
+
+<!-- Transisi (sprite ekspresi) -->
+<div id="loader" class="loader" hidden>
+  <div id="loaderFace"></div>
+  <p class="pixel">Memuat media…</p>
+  <div class="bar"><i id="loaderBar"></i></div>
+</div>
+
+<!-- 2. APLIKASI -->
+<div id="app" class="app" hidden>
+  <header class="top">
+    <div id="avatar"></div>
+    <div class="who"><b id="hello"></b><small id="kelasLbl"></small></div>
+    <div class="prog"><span id="progTxt"></span><div class="bar"><i id="progBar"></i></div></div>
+    <button class="btn ghost" id="logout">Keluar</button>
+  </header>
+  <div class="layout">
+    <nav id="nav" class="nav" aria-label="Daftar materi"></nav>
+    <main id="content" class="content"></main>
+  </div>
+</div>
+
+<!-- 3D viewer -->
+<div id="viewer" class="viewer" hidden>
+  <div class="vbar">
+    <button class="btn" id="backBtn">← Kembali ke Materi</button>
+    <span id="vTitle" class="pixel"></span>
+  </div>
+  <iframe id="vFrame" title="Model 3D" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>
+  <p class="vhint">Seret untuk memutar • Scroll/cubit untuk zoom • Model 3D oleh kreator di Sketchfab</p>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
